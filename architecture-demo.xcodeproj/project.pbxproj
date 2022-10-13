@@ -8,17 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		FAF2A60C28F86BBA0004C82E /* architecture_demoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF2A60B28F86BBA0004C82E /* architecture_demoApp.swift */; };
-		FAF2A60E28F86BBA0004C82E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF2A60D28F86BBA0004C82E /* ContentView.swift */; };
 		FAF2A61028F86BBE0004C82E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAF2A60F28F86BBE0004C82E /* Assets.xcassets */; };
 		FAF2A61328F86BBE0004C82E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAF2A61228F86BBE0004C82E /* Preview Assets.xcassets */; };
+		FAF2A61D28F86BED0004C82E /* FavouritePrimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF2A61928F86BEC0004C82E /* FavouritePrimeView.swift */; };
+		FAF2A61E28F86BED0004C82E /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF2A61A28F86BEC0004C82E /* AppState.swift */; };
+		FAF2A61F28F86BED0004C82E /* CounterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF2A61B28F86BEC0004C82E /* CounterView.swift */; };
+		FAF2A62028F86BED0004C82E /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF2A61C28F86BED0004C82E /* HomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		FAF2A60828F86BBA0004C82E /* architecture-demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "architecture-demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAF2A60B28F86BBA0004C82E /* architecture_demoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = architecture_demoApp.swift; sourceTree = "<group>"; };
-		FAF2A60D28F86BBA0004C82E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		FAF2A60F28F86BBE0004C82E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FAF2A61228F86BBE0004C82E /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FAF2A61928F86BEC0004C82E /* FavouritePrimeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavouritePrimeView.swift; sourceTree = "<group>"; };
+		FAF2A61A28F86BEC0004C82E /* AppState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		FAF2A61B28F86BEC0004C82E /* CounterView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CounterView.swift; sourceTree = "<group>"; };
+		FAF2A61C28F86BED0004C82E /* HomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,7 +58,10 @@
 			isa = PBXGroup;
 			children = (
 				FAF2A60B28F86BBA0004C82E /* architecture_demoApp.swift */,
-				FAF2A60D28F86BBA0004C82E /* ContentView.swift */,
+				FAF2A61A28F86BEC0004C82E /* AppState.swift */,
+				FAF2A61B28F86BEC0004C82E /* CounterView.swift */,
+				FAF2A61928F86BEC0004C82E /* FavouritePrimeView.swift */,
+				FAF2A61C28F86BED0004C82E /* HomeView.swift */,
 				FAF2A60F28F86BBE0004C82E /* Assets.xcassets */,
 				FAF2A61128F86BBE0004C82E /* Preview Content */,
 			);
@@ -137,8 +146,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FAF2A60E28F86BBA0004C82E /* ContentView.swift in Sources */,
+				FAF2A61E28F86BED0004C82E /* AppState.swift in Sources */,
+				FAF2A61D28F86BED0004C82E /* FavouritePrimeView.swift in Sources */,
 				FAF2A60C28F86BBA0004C82E /* architecture_demoApp.swift in Sources */,
+				FAF2A62028F86BED0004C82E /* HomeView.swift in Sources */,
+				FAF2A61F28F86BED0004C82E /* CounterView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
