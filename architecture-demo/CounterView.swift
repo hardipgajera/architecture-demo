@@ -9,18 +9,18 @@ import SwiftUI
 
 struct CounterView: View {
     
-    @StateObject var state: Store<AppState>
+    @StateObject var state: Store<AppState, AppAction>
     @State private var showIsPrimeAlert: Bool = false
     
     var body: some View {
         VStack(spacing: 10) {
             Spacer()
             HStack {
-                Button { state.value.count -= 1 } label: {
+                Button { state.send(.counterAction(.decr)) } label: {
                     Text("-")
                 }
                 Text("\(state.value.count)")
-                Button { state.value.count += 1 } label: {
+                Button { state.send(.counterAction(.incr)) } label: {
                     Text("+")
                 }
             }
@@ -30,10 +30,10 @@ struct CounterView: View {
             Spacer()
             Button {
                 
-                if let index = state.value.favouritePrimeNumbers.firstIndex(of: state.value.count) {
-                    state.value.favouritePrimeNumbers.remove(at: index)
+                if let _ = state.value.favouritePrimeNumbers.firstIndex(of: state.value.count) {
+                    state.send(.favouriteAction(.remove))
                 } else {
-                    state.value.favouritePrimeNumbers.append(state.value.count)
+                    state.send(.favouriteAction(.add))
                 }
             } label: {
                 if state.value.favouritePrimeNumbers.contains(state.value.count) {

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
     
-    @StateObject var appState: Store<AppState> = .init(value: AppState())
+    @StateObject var appState: Store<AppState,AppAction> = .init(value: AppState(), reducer: appReducer)
     
     var body: some View {
         NavigationView {
