@@ -9,18 +9,18 @@ import SwiftUI
 
 struct CounterView: View {
     
-    @StateObject var state: AppState
+    @StateObject var state: Store<AppState>
     @State private var showIsPrimeAlert: Bool = false
     
     var body: some View {
         VStack(spacing: 10) {
             Spacer()
             HStack {
-                Button { state.count -= 1 } label: {
+                Button { state.value.count -= 1 } label: {
                     Text("-")
                 }
-                Text("\(state.count)")
-                Button { state.count += 1 } label: {
+                Text("\(state.value.count)")
+                Button { state.value.count += 1 } label: {
                     Text("+")
                 }
             }
@@ -30,24 +30,24 @@ struct CounterView: View {
             Spacer()
             Button {
                 
-                if let index = state.favouritePrimeNumbers.firstIndex(of: state.count) {
-                    state.favouritePrimeNumbers.remove(at: index)
+                if let index = state.value.favouritePrimeNumbers.firstIndex(of: state.value.count) {
+                    state.value.favouritePrimeNumbers.remove(at: index)
                 } else {
-                    state.favouritePrimeNumbers.append(state.count)
+                    state.value.favouritePrimeNumbers.append(state.value.count)
                 }
             } label: {
-                if state.favouritePrimeNumbers.contains(state.count) {
-                    Text("Remove \(state.count) to the favourite prime")
+                if state.value.favouritePrimeNumbers.contains(state.value.count) {
+                    Text("Remove \(state.value.count) to the favourite prime")
                 } else {
-                    Text("Add \(state.count) to the favourite prime")
+                    Text("Add \(state.value.count) to the favourite prime")
                 }
             }
             .padding(.bottom)
         }.alert("", isPresented: $showIsPrimeAlert) { } message: {
-            if isPrime(state.count) {
-                Text("\(state.count) is prime number.")
+            if isPrime(state.value.count) {
+                Text("\(state.value.count) is prime number.")
             } else {
-                Text("\(state.count) is not prime number.")
+                Text("\(state.value.count) is not prime number.")
             }
         }
     }

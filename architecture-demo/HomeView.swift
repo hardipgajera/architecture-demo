@@ -9,7 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
     
-    @StateObject var appState: AppState = AppState()
+    @StateObject var appState: Store<AppState> = .init(value: AppState())
     
     var body: some View {
         NavigationView {
@@ -17,7 +17,7 @@ struct HomeView: View {
                 NavigationLink(destination: CounterView(state: appState)) {
                     Text("Counter Demo")
                 }
-                NavigationLink(destination: FavouritePrimeView(state: $appState.favouriteAppState)) {
+                NavigationLink(destination: FavouritePrimeView(state: $appState.value.favouriteAppState)) {
                     Text("Favourite prime")
                 }
             }

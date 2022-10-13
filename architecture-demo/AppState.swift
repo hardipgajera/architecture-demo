@@ -8,9 +8,17 @@
 import Foundation
 import Combine
 
-class AppState: ObservableObject {
-    @Published var count: Int = 0
-    @Published var favouritePrimeNumbers: [Int] = []
+class Store<Value>: ObservableObject {
+    @Published var value: Value
+    
+    init(value: Value) {
+        self.value = value
+    }
+}
+
+struct AppState {
+    var count: Int = 0
+    var favouritePrimeNumbers: [Int] = []
 }
 
 extension AppState {
