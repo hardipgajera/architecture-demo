@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA8DC17D28F9F4E500157565 /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8DC17C28F9F4E500157565 /* AppReducer.swift */; };
 		FAF2A60C28F86BBA0004C82E /* architecture_demoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF2A60B28F86BBA0004C82E /* architecture_demoApp.swift */; };
 		FAF2A61028F86BBE0004C82E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAF2A60F28F86BBE0004C82E /* Assets.xcassets */; };
 		FAF2A61328F86BBE0004C82E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAF2A61228F86BBE0004C82E /* Preview Assets.xcassets */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FA8DC17C28F9F4E500157565 /* AppReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
 		FAF2A60828F86BBA0004C82E /* architecture-demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "architecture-demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAF2A60B28F86BBA0004C82E /* architecture_demoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = architecture_demoApp.swift; sourceTree = "<group>"; };
 		FAF2A60F28F86BBE0004C82E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -38,6 +40,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FA8DC17E28F9F50000157565 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FAF2A61B28F86BEC0004C82E /* CounterView.swift */,
+				FAF2A61928F86BEC0004C82E /* FavouritePrimeView.swift */,
+				FAF2A61C28F86BED0004C82E /* HomeView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FA8DC17F28F9F50C00157565 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				FAF2A61A28F86BEC0004C82E /* AppState.swift */,
+				FA8DC17C28F9F4E500157565 /* AppReducer.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
 		FAF2A5FF28F86BBA0004C82E = {
 			isa = PBXGroup;
 			children = (
@@ -58,10 +79,8 @@
 			isa = PBXGroup;
 			children = (
 				FAF2A60B28F86BBA0004C82E /* architecture_demoApp.swift */,
-				FAF2A61A28F86BEC0004C82E /* AppState.swift */,
-				FAF2A61B28F86BEC0004C82E /* CounterView.swift */,
-				FAF2A61928F86BEC0004C82E /* FavouritePrimeView.swift */,
-				FAF2A61C28F86BED0004C82E /* HomeView.swift */,
+				FA8DC17F28F9F50C00157565 /* Core */,
+				FA8DC17E28F9F50000157565 /* View */,
 				FAF2A60F28F86BBE0004C82E /* Assets.xcassets */,
 				FAF2A61128F86BBE0004C82E /* Preview Content */,
 			);
@@ -146,6 +165,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA8DC17D28F9F4E500157565 /* AppReducer.swift in Sources */,
 				FAF2A61E28F86BED0004C82E /* AppState.swift in Sources */,
 				FAF2A61D28F86BED0004C82E /* FavouritePrimeView.swift in Sources */,
 				FAF2A60C28F86BBA0004C82E /* architecture_demoApp.swift in Sources */,
