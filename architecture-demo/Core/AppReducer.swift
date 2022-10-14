@@ -7,7 +7,19 @@
 
 import Foundation
 
-func appReducer(store: inout AppState, action: AppAction) {
+let appReducer = combine(counterReducer,favouriteActionReducer)
+
+func combine<Value, Action>(
+    _ first: @escaping ((inout Value, Action) -> Void),
+    _ second: @escaping ((inout Value, Action) -> Void)
+) -> ((inout Value, Action) -> Void) {
+    return { value, action in
+        first(&value, action)
+        second(&value, action)
+    }
+}
+
+func counterReducer(store: inout AppState, action: AppAction) {
     switch action {
     case .counterAction(let counterAction):
         switch counterAction {
@@ -16,6 +28,13 @@ func appReducer(store: inout AppState, action: AppAction) {
         case .decr:
             store.count -= 1
         }
+    default:
+        break
+    }
+}
+
+func favouriteActionReducer(store: inout AppState, action: AppAction) {
+    switch action {
     case .favouriteAction(let favouriteAction):
         switch favouriteAction {
         case .add:
@@ -25,5 +44,7 @@ func appReducer(store: inout AppState, action: AppAction) {
                 store.favouriteAppState.favouritePrimeNumbers.remove(at: index)
             }
         }
+    default:
+        break
     }
 }
