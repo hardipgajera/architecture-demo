@@ -10,12 +10,12 @@ import Foundation
 let appReducer = combine(counterReducer,favouriteActionReducer)
 
 func combine<Value, Action>(
-    _ first: @escaping ((inout Value, Action) -> Void),
-    _ second: @escaping ((inout Value, Action) -> Void)
+    _ reducers: ((inout Value, Action) -> Void)...
 ) -> ((inout Value, Action) -> Void) {
     return { value, action in
-        first(&value, action)
-        second(&value, action)
+        for reducer in reducers {
+            reducer(&value, action)
+        }
     }
 }
 
